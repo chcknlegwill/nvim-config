@@ -1,9 +1,3 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-vim.g.mapleader = " "
-
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -21,20 +15,12 @@ vim.opt.rtp:prepend(lazypath)
 
 
 local opts = {}
+
+
+
+
+require("vim-options")
 require("lazy").setup("plugins")
-
-vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal left<CR>")
-
-
-local config = require("nvim-treesitter.configs")
-config.setup({
-  ensure_installed = {"lua", "javascript", "python", "java"},
-  highlight = { enabled = true},
-  indent = { enable = true},
-  })
-
-
-
 require("gruvbox").setup()
 vim.cmd.colorscheme "gruvbox"
 
