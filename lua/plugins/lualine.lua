@@ -6,6 +6,5 @@ return {
       theme = "gruvbox"
   }
     })
-
   end
 }

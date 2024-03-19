@@ -12,12 +12,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 --video stopped at 12.40
-
-
 local opts = {}
-
-
-
 
 require("vim-options")
 require("lazy").setup("plugins")
