@@ -1,8 +1,7 @@
 -- This file needs to have same structure as nvconfig.lua 
 -- https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
 -- Please read that file to know all available options :( 
---
---
+
 local options = {
 
   base46 = {
@@ -12,7 +11,7 @@ local options = {
     integrations = {},
     changed_themes = {},
     transparency = false,
-    theme_toggle = { "gruvbox", "one_light" },
+    --theme_toggle = { "gruvbox", "one_light" },
   },
 
   ui = {
@@ -26,7 +25,7 @@ local options = {
       },
     },
 
-    telescope = { style = "borderless" }, -- borderless / bordered
+    telescope = { style = "bordered" }, -- borderless / bordered
 
     statusline = {
       enabled = true,
