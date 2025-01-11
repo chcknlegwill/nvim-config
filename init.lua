@@ -7,7 +7,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
       { out, "WarningMsg" },
       { "\nPress any key to exit..." },
- 
+
     }, true, {})
     vim.fn.getchar()
     os.exit(1)
@@ -16,6 +16,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local opts = {}
+
 
 require("vim-options")
 require("lazy").setup("plugins")

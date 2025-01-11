@@ -1,4 +1,7 @@
-return {'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = { 'nvim-lua/plenary.nvim' }, 
+return {
+  {
+
+  'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = { 'nvim-lua/plenary.nvim' }, 
   config = function()
     local builtin = require("telescope.builtin")
 
@@ -7,7 +10,19 @@ return {'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = { 'nvim-l
     vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 
   end
-} --make sure to add a comma when adding stuff  
-
-
-
+},
+{
+  "nvim-telescope/telescope-ui-select.nvim",
+  config = function()
+    require("telescope").setup({
+    extentions = {
+    ["ui-select"] = {
+    require("telescope.themes").get_dropdown {
+    }
+    }
+    }
+      })
+    require("telescope").load_extension("ui-select")
+    end
+  },
+}
