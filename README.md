@@ -1,9 +1,8 @@
-**This repo is supposed to used as config by NvChad users!**
+## These are my personal config files for lunarvim
+**Make sure to install lunarvim before cloning this otherwise it will NOT work**
 
-- The main nvchad repo (NvChad/NvChad) is used as a plugin by this repo.
-- So you just import its modules , like `require "nvchad.options" , require "nvchad.mappings"`
-- So you can delete the .git from this repo ( when you clone it locally ) or fork it :)
+These are my personal configurations for lunarvim (and some notes in case clipboard stops working).
 
-# Credits
-
-1) Lazyvim starter https://github.com/LazyVim/starter as nvchad's starter was inspired by Lazyvim's . It made a lot of things easier!
+**Credits to (lunarvim)[https://www.lunarvim.org/] for making an exellent configuration that I very much like as well as 
+nvchad for also making a very nice (and easier to understand) config that has inspired many keybinds / keymaps in this config
+too.**
