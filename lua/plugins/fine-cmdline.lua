@@ -14,18 +14,21 @@ return {
       },
       popup = {
         position = {
-          row = "10%",
+          row = "50%",
           col = "50%",
         },
         size = {
-          width = "60%",
+          width = "75%",
         },
         border = {
-          style = "rounded",
+          style = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" }, 
+          --rounded is the only default option from what I could find
+          --this should make it sharp
+
         },
         win_options = {
           winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
-          signcolumn = "no", -- Disable sign column to avoid visual clutter
+          signcolumn = "no", -- Disable sign" column to avoid visual clutter
         },
       },
     })

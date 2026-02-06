@@ -7,7 +7,7 @@ return {
   config = function()
     require("mason").setup()
     require("mason-lspconfig").setup({
-      ensure_installed = { "lua_ls" }, -- & other LSP's e.g. Rust (Bacon) 
+      ensure_installed = { "lua_ls", "gopls" }, -- & other LSP's e.g. Rust (Bacon) 
       automatic_installation = true,
       handlers = {
         function(server_name)

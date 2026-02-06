@@ -17,6 +17,22 @@ vim.opt.rtp:prepend(lazypath)
 
 local opts = {}
 
+--adding things to resized the Netrw window
+local netrw_group = vim.api.nvim_create_augroup("NetrwCustom", { clear = true })
+
+vim.api.nvim_create_autocmd("Filetype", {
+  pattern = "netrw",
+  group = netrw_group,
+  callback = function()
+    --map alt+arrow keys just like vim-options, only with a buffer enabled for window resizing
+    vim.keymap.set('n', '<A-Up>', ':resize +2<CR>', { remap = false, buffer = true })
+    vim.keymap.set('n', '<A-Down>', ':resize -2<CR>', { remap = false, buffer = true })
+    vim.keymap.set('n', '<A-Left>', ':vertical resize -2<CR>', { remap = false, buffer = true })
+    vim.keymap.set('n', '<A-Right>', ':vertical resize +2<CR>', { remap = false, buffer = true })
+  end
+})
+
+
 
 require("vim-options")
 require("lazy").setup("plugins")
