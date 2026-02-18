@@ -63,7 +63,7 @@ return {
 				cpp = { "clang_format" },
 
 				--ocaml
-				ocml = { "ocaml-lsp" },
+				ocml = { "ocamlformat" }, --use ocaml-lsp for most recent version (5.x - needed 4.14 for uni)
 
 				-- Shell
 				sh = { "shfmt" },
