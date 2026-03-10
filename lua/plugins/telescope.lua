@@ -208,6 +208,15 @@ return {
 		end,
 	},
 
+	-- Telescope Symbols (insert special characters/unicode)
+	{
+		"nvim-telescope/telescope-symbols.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim" },
+		keys = {
+			{ "<leader>fs", "<cmd>Telescope symbols<cr>", desc = "Insert symbol", mode = { "n", "i" } },
+		},
+	},
+
 	-- Telescope UI Select (make vim.ui.select use telescope)
 	-- This is what's causing your error - we'll add better error handling
 	{
