@@ -10,14 +10,6 @@
 return {
 	{
 		"stevearc/conform.nvim",
-		dependencies = {
-			-- mason-conform bridges Mason and conform so Mason can auto-install formatters
-			-- Remove this if you don't use Mason
-			{
-				"zapling/mason-conform.nvim",
-				opts = {}, -- auto-installs formatters that are configured below
-			},
-		},
 		event = { "BufWritePre" }, -- load before saving so format-on-save works
 		cmd = { "ConformInfo" }, -- also load on :ConformInfo command
 		keys = {
@@ -31,6 +23,8 @@ return {
 			},
 		},
 		opts = {
+			notify_on_error = false, -- silence "formatter not found" errors
+
 			-- ─── Formatter definitions per filetype ─────────────────────────────────
 			-- List multiple formatters to chain them (they run left to right)
 			-- "lsp" means fall back to LSP formatting if no formatter is found
