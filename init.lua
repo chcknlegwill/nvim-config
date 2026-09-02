@@ -1,3 +1,6 @@
+
+
+
 vim.g.mapleader = " "
 
 -- Spelling
@@ -17,7 +20,7 @@ vim.opt.relativenumber = false
 vim.opt.scrolloff = 8
 
 -- Markdown-friendly line wrapping
-vim.opt.wrap= true
+vim.opt.wrap = true
 vim.opt.linebreak = true
 
 -- Search
@@ -30,7 +33,6 @@ vim.opt.clipboard = "unnamedplus"
 
 -- Keymaps
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>le", vim.cmd.Lexplore)
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -43,24 +45,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Plugins
+-- Load plugins modularly from lua/plugins/
 require("lazy").setup({
-  {
-    "ellisonleao/gruvbox.nvim",
-    priority = 1000,
-    config = function()
-      vim.o.background = "dark"
-      vim.cmd.colorscheme("gruvbox")
-    end,
-  },
-  {
-    "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      local builtin = require("telescope.builtin")
-      vim.keymap.set("n", "<leader>ff", builtin.find_files)
-      vim.keymap.set("n", "<leader>fg", builtin.live_grep)
-      vim.keymap.set("n", "<leader>fb", builtin.buffers)
-    end,
-  },
+  import = "plugins",
 })
+
