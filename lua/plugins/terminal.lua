@@ -4,7 +4,7 @@ return {
   config = function()
     require("toggleterm").setup({
       size = 20,
-      open_mapping = [[<leader>i]],
+      open_mapping = [[<M-i>]],
       direction = "float",
       float_opts = { border = "curved", winblend = 3 },
     })
